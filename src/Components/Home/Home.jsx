@@ -1,5 +1,5 @@
 import Banner from "../Banner/Banner";
-import BooksCard from "../BooksCardContainer/BooksCard";
+import BooksCard from "../BooksCardsContainer/BooksCards";
 
 const Home = () => {
   return (
