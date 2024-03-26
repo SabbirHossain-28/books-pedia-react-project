@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { FaRegStar } from "react-icons/fa6";
 
 const BookCard = ({ bookData }) => {
-  const { image,tags,bookName,author,category } = bookData;
+  const { bookId,image,tags,bookName,author,category } = bookData;
   const [tag1,tag2]=tags;
-  console.log(bookData);
   return (
-    <Link>
+    <Link to={`/bookCard/${bookId}`}>
       <div className="card card-compact bg-base-100 shadow-2xl">
         <div className="p-4">
         <figure className="h-64 bg-[#F3F3F3] lg:p-8 rounded-lg">
