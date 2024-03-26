@@ -13,11 +13,33 @@ const BooksDetails = () => {
   const [tag1,tag2]= tags;
 
   const handleAddToReadlist=()=>{
-    toast("You have successfully added this book in readlist")
+      const saveAddToReadBookData=JSON.parse(localStorage.getItem("readBooks")) || [] ;
+      const isSaveAddToReadBookData=saveAddToReadBookData.find(addToReadBook=>addToReadBook.bookId===clickedBookInfo.bookId);
+      
+      if(isSaveAddToReadBookData){
+          toast("You have already added this book in readlist");
+        }
+        else{
+        toast("You have successfully added this book in readlist");
+        saveAddToReadBookData.push(clickedBookInfo);
+        const setLocalValue=JSON.stringify(saveAddToReadBookData);
+        localStorage.setItem("readBooks",setLocalValue)
+    }
   }
 
   const handleAddToWishList=()=>{
-    toast("You have successfully added this book in wishlist")
+    const saveAddToReadBookData=JSON.parse(localStorage.getItem("wishList" && "readBooks")) || [] ;
+    const isSaveAddToReadBookData=saveAddToReadBookData.find(addToReadBook=>addToReadBook.bookId===clickedBookInfo.bookId);
+    
+    if(isSaveAddToReadBookData){
+        toast("You have already added this book in readlist");
+      }
+      else{
+      toast("You have successfully added this book in wishList");
+      saveAddToReadBookData.push(clickedBookInfo);
+      const setLocalValue=JSON.stringify(saveAddToReadBookData);
+      localStorage.setItem("wishList",setLocalValue)
+  }
   }
   return (
     <div className="max-w-7xl mx-auto mt-12 mb-24">
