@@ -1,4 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BooksDetails = () => {
   const allBooksData = useLoaderData();
@@ -9,7 +11,14 @@ const BooksDetails = () => {
   );
   const { image, bookName, author, category, review,tags,totalPages,publisher,yearOfPublishing,rating } = clickedBookInfo;
   const [tag1,tag2]= tags;
-  console.log(clickedBookInfo);
+
+  const handleAddToReadlist=()=>{
+    toast("You have successfully added this book in readlist")
+  }
+
+  const handleAddToWishList=()=>{
+    toast("You have successfully added this book in wishlist")
+  }
   return (
     <div className="max-w-7xl mx-auto mt-12 mb-24">
       <div className="flex flex-col lg:flex-row lg:gap-6">
@@ -50,11 +59,12 @@ const BooksDetails = () => {
             </div>
           </div>
           <div className="flex gap-4">
-            <Link><button className="border-2 border-[#1313134D] btn-md lg:btn-lg rounded-lg text-[#131313] text-lg font-semibold font-work">Read</button></Link>
-            <Link><button className="btn-md lg:btn-lg rounded-lg text-white text-lg font-work font-semibold bg-[#50B1C9]">Wishlist</button></Link>
+            <Link><button onClick={handleAddToReadlist} className="border-2 border-[#1313134D] btn-md lg:btn-lg rounded-lg text-[#131313] text-lg font-semibold font-work">Read</button></Link>
+            <Link><button onClick={handleAddToWishList} className="btn-md lg:btn-lg rounded-lg text-white text-lg font-work font-semibold bg-[#50B1C9]">Wishlist</button></Link>
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
