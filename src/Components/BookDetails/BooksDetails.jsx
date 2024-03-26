@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {checkIfBookAlreadyInReadList, saveAddToLocalStorageReadBookData,saveAddToLocalStorageWishListBookData } from "../../Utility/localStorage";
 
 const BooksDetails = () => {
   const allBooksData = useLoaderData();
@@ -12,35 +13,32 @@ const BooksDetails = () => {
   const { image, bookName, author, category, review,tags,totalPages,publisher,yearOfPublishing,rating } = clickedBookInfo;
   const [tag1,tag2]= tags;
 
-  const handleAddToReadlist=()=>{
-      const saveAddToReadBookData=JSON.parse(localStorage.getItem("readBooks")) || [] ;
-      const isSaveAddToReadBookData=saveAddToReadBookData.find(addToReadBook=>addToReadBook.bookId===clickedBookInfo.bookId);
-      
-      if(isSaveAddToReadBookData){
-          toast("You have already added this book in readlist");
-        }
-        else{
-        toast("You have successfully added this book in readlist");
-        saveAddToReadBookData.push(clickedBookInfo);
-        const setLocalValue=JSON.stringify(saveAddToReadBookData);
-        localStorage.setItem("readBooks",setLocalValue)
+  const handleAddToReadlist = () => {
+    const addedReadData = saveAddToLocalStorageReadBookData(clickedBookInfo);
+    if (addedReadData) {
+      toast("You have successfully added this book to the read list");
+    } else {
+      toast("You have already added this book to the read list");
     }
-  }
+  };
+  
 
-  const handleAddToWishList=()=>{
-    const saveAddToReadBookData=JSON.parse(localStorage.getItem("wishList" && "readBooks")) || [] ;
-    const isSaveAddToReadBookData=saveAddToReadBookData.find(addToReadBook=>addToReadBook.bookId===clickedBookInfo.bookId);
+  const handleAddToWishList = () => {
+    const isAddedToReadList = checkIfBookAlreadyInReadList(clickedBookInfo);
     
-    if(isSaveAddToReadBookData){
-        toast("You have already added this book in readlist");
+    if (isAddedToReadList) {
+      toast("This book is already selected in the read list");
+    } else {
+      const addedWishListData = saveAddToLocalStorageWishListBookData(clickedBookInfo);
+      if (addedWishListData) {
+        toast("You have successfully added this book to the wishlist");
+      } else {
+        toast("You have already added this book to the wishlist");
       }
-      else{
-      toast("You have successfully added this book in wishList");
-      saveAddToReadBookData.push(clickedBookInfo);
-      const setLocalValue=JSON.stringify(saveAddToReadBookData);
-      localStorage.setItem("wishList",setLocalValue)
-  }
-  }
+    }
+  };
+  
+  
   return (
     <div className="max-w-7xl mx-auto mt-12 mb-24">
       <div className="flex flex-col lg:flex-row lg:gap-6">

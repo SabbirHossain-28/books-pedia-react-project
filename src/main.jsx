@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path:"/bookCard/:id",
         element: <BooksDetails></BooksDetails>,
-        loader:()=>fetch('../public/books.json'),
+        loader:()=>fetch('https://sabbirhossain-28.github.io/books-json-host/books.json'),
       }
     ]
   },

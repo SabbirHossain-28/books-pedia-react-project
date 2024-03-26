@@ -1,8 +1,25 @@
+import { useEffect, useState } from "react";
+import { getReadBookDataFromLocalStorage, getWishListBookDataFromLocalStorage } from "../../Utility/localStorage";
+
 const ListedBooks = () => {
+  const [readListBookData,setReadListBookData]=useState();
+
+  const [wishlistBookData,setWishlistBookData]=useState();
+
+  useEffect(()=>{
+    const readData=getReadBookDataFromLocalStorage()
+    setReadListBookData(readData);
+  },[])
+
+  useEffect(()=>{
+    const wishListData=getWishListBookDataFromLocalStorage();
+    setWishlistBookData(wishListData)
+  },[])
+  console.log(readListBookData);
   return (
     <div className="max-w-7xl mx-auto">
       <div className="border mt-9 mb-12 p-8 text-center bg-[#1313130D] rounded-lg">
-        <h2 className="text-[#131313] text-4xl font-work font-bold">Books</h2>
+        <h2 className="text-[#2d1111] text-4xl font-work font-bold">Books</h2>
       </div>
       <div>
         <div role="tablist" className="tabs tabs-lifted">
@@ -33,20 +50,6 @@ const ListedBooks = () => {
             className="tab-content bg-base-100 border-base-300 rounded-box p-6"
           >
             Tab content 2
-          </div>
-
-          <input
-            type="radio"
-            name="my_tabs_2"
-            role="tab"
-            className="tab"
-            aria-label="Tab 3"
-          />
-          <div
-            role="tabpanel"
-            className="tab-content bg-base-100 border-base-300 rounded-box p-6"
-          >
-            Tab content 3
           </div>
         </div>
       </div>
