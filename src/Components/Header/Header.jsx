@@ -26,13 +26,13 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1]  shadow bg-base-100 rounded-box w-48 font-work"
           >
-            <NavLink to="/" activeClassName="active">
+            <NavLink to="/" activeclassname="active">
               Home
             </NavLink>
-            <NavLink to="/booksListed" activeClassName="active">
+            <NavLink to="/booksListed" activeclassname="active">
               Listed Books
             </NavLink>
-            <NavLink to="/readPages" activeClassName="active">
+            <NavLink to="/readPages" activeclassname="active">
               Pages to Read
             </NavLink>
           </ul>
@@ -41,20 +41,20 @@ const Header = () => {
       </div>
       <div className="Navbar-link navbar-center hidden lg:flex">
         <ul className=" menu menu-horizontal px-1 font-work">
-          <NavLink to="/" activeClassName="active">
+          <NavLink to="/" activeclassname="active">
             Home
           </NavLink>
-          <NavLink to="/booksListed" activeClassName="active">
+          <NavLink to="/booksListed" activeclassname="active">
             Listed Books
           </NavLink>
-          <NavLink to="/readPages" activeClassName="active">
+          <NavLink to="/readPages" activeclassname="active">
             Pages to Read
           </NavLink>
         </ul>
       </div>
-      <div className="navbar-end lg:gap-4">
-        <a className="btn bg-[#23BE0A] text-white text-lg font-work font-semibold btn-sm">Sign In</a>
-        <a className="btn bg-[#59C6D2] text-white text-lg font-work font-semibold btn-sm">Sign Up  </a>
+      <div className="navbar-end gap-2 lg:gap-4">
+        <a className="btn bg-[#23BE0A] text-white  font-work lg:font-semibold btn-sm lg:btn-md">Sign In</a>
+        <a className="btn bg-[#59C6D2] text-white  font-work lg:font-semibold btn-sm lg:btn-md  ">Sign Up  </a>
       </div>
     </div>
   );

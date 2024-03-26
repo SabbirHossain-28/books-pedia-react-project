@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily:{
         "work":["Work Sans, sans-serif"],
-        "playfair":["Playfair Display, serif"],
+        "playfair":["Playfair Display, sans-serif"],
       },
     },
   },
