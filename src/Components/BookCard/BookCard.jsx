@@ -10,7 +10,7 @@ const BookCard = ({ bookData }) => {
     <Link>
       <div className="card card-compact bg-base-100 shadow-2xl">
         <div className="p-4">
-        <figure className="h-64 bg-[#F3F3F3] p-8 rounded-lg">
+        <figure className="h-64 bg-[#F3F3F3] lg:p-8 rounded-lg">
           <img
             src={image}
             alt="book-image "
