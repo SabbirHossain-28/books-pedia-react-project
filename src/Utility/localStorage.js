@@ -37,6 +37,6 @@ export const getReadBookDataFromLocalStorage=()=>{
     return(getStoreReadBookdData)
 }
 export const getWishListBookDataFromLocalStorage=()=>{
-    const getStoredWishListData=JSON.parse(localStorage.getItem("wishList"));
+    const getStoredWishListData=JSON.parse(localStorage.getItem("wishList")) || [];
     return(getStoredWishListData)
 }
