@@ -38,6 +38,9 @@ const Header = () => {
             <NavLink to="/membership" activeclassname="active">
               Membership
             </NavLink>
+            <NavLink to="/userFeedBack" activeclassname="active">
+              User FeedBack
+            </NavLink>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl lg:text-4xl font-work font-bold pl-0">BooksPedia</a>
@@ -56,6 +59,9 @@ const Header = () => {
           <NavLink to="/membership" activeclassname="active">
             Membership
           </NavLink>
+          <NavLink to="/userFeedBack" activeclassname="active">
+              User FeedBack
+            </NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-2 lg:gap-4">

@@ -5,7 +5,7 @@ const BooksCards = () => {
     const [booksData,setBooksData]=useState([]);
 
     useEffect(()=>{
-        fetch('../../../public/books.json')
+        fetch('https://sabbirhossain-28.github.io/books-json-host/books.json')
         .then(res =>res.json())
         .then(data => setBooksData(data))
     },[])

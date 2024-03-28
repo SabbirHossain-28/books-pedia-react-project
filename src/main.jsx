@@ -12,6 +12,7 @@ import BooksDetails from './Components/BookDetails/BooksDetails';
 import ReadPages from './Components/ReadPagesChart/ReadPages';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Membership from './Components/Membership/Membership';
+import UserFeedBack from './Components/UserFeedBack/UserFeedBack';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path:"/membership",
         element: <Membership></Membership>
+      },
+      {
+        path:"/userFeedBack",
+        element: <UserFeedBack></UserFeedBack>
       },
       {
         path:"/bookCard/:id",
