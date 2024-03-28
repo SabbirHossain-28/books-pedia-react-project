@@ -92,7 +92,7 @@ const ListedBooks = () => {
             role="tab"
             className="tab text-xl font-work font-medium"
             aria-label="Read Books"
-            // checked
+            defaultChecked
           />
           <div
             role="tabpanel"

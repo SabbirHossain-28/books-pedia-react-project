@@ -35,6 +35,9 @@ const Header = () => {
             <NavLink to="/readPages" activeclassname="active">
               Pages to Read
             </NavLink>
+            <NavLink to="/membership" activeclassname="active">
+              Membership
+            </NavLink>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl lg:text-4xl font-work font-bold pl-0">BooksPedia</a>
@@ -49,6 +52,9 @@ const Header = () => {
           </NavLink>
           <NavLink to="/readPages" activeclassname="active">
             Pages to Read
+          </NavLink>
+          <NavLink to="/membership" activeclassname="active">
+            Membership
           </NavLink>
         </ul>
       </div>

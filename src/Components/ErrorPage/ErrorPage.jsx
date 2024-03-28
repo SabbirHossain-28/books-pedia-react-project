@@ -7,7 +7,7 @@ const ErrorPage = () => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="flex flex-col justify-center items-center">
         <h1 className="font-work text-3xl font-bold mb-2">OOOooops!!! Sorry You Are In the Wrong Route</h1>
-        <h2 className="font-work text-3xl font-bold mb-2">{error.status} Data {error.statusText}</h2>
+        <h2 className="font-work text-3xl font-bold mb-2">{error.status} {error.statusText}</h2>
         <Link to="/" className="font-work text-2xl font-semibold mb-4 text-[#23BE0A]">Go Back Home</Link>
         <label className="swap swap-flip text-9xl">
           {/* this hidden checkbox controls the state */}

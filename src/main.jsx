@@ -11,6 +11,7 @@ import ListedBooks from './Components/ListedBooks/ListedBooks';
 import BooksDetails from './Components/BookDetails/BooksDetails';
 import ReadPages from './Components/ReadPagesChart/ReadPages';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import Membership from './Components/Membership/Membership';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path:"/readPages",
         element:<ReadPages></ReadPages>
+      },
+      {
+        path:"/membership",
+        element: <Membership></Membership>
       },
       {
         path:"/bookCard/:id",
